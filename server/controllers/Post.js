@@ -4,22 +4,22 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 // setup cloudinary
-// cloudinary.v2.config({
-//     cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-//     api_key: process.env.CLOUDINARY_API_KEY,
-//     api_secret: process.env.CLOUDINARY_API_SECRET,
-// });
+cloudinary.config({
+    cloud_name: 'ddcwpznkg',
+    api_key: '674857914249998',
+    api_secret: '2VrO4iQKPwaR93TLnZGqXI0W8zM'
+});
 
 
 const createPost = async (req, res) => {
     try {
-        // // converting buffer into base64
-        // const b64 = Buffer.from(req.file.buffer).toString("base64");
-        // let dataURI = "data:" + req.file.mimetype + ";base64," + b64;
-        // const photoObject = await cloudinary.v2.uploader.upload(dataURI);
+        // converting buffer into base64
+        const b64 = Buffer.from(req.file.buffer).toString("base64");
+        let dataURI = "data:" + req.file.mimetype + ";base64," + b64;
+        const photoObject = await cloudinary.v2.uploader.upload(dataURI);
 
         // create post
-        const newPost = await Post.create({ content: req.body.content, imageUrl: photoObject.url, authorId: req.userId });
+        const newPost = await Post.create({ company: req.body.company, price: req.body.price, ram: req.body.ram, storage: req.body.storage, condition: req.body.condition, address: req.body.address, contact: req.body.contact, detail: req.body.detail, imageUrl: photoObject.url });
 
         return res.status(201).json({
             status: 'success',
@@ -30,13 +30,18 @@ const createPost = async (req, res) => {
     }
 }
 
-const myPosts = async (req, res) => {
+const GetMyPosts = async (req,res) => {
+
+   
+    const id = req.params.id;
+    console.log("id",id);
+
     try {
-        const posts = await Post.find({authorId: req.userId});
+        const mypost = await Post.findById(id);
 
         return res.json({
             status: 'success',
-            posts: posts
+            posts: mypost
         })
     } catch (error) {
         console.log(error.message);
@@ -55,8 +60,16 @@ const allPosts = async (req, res) => {
         return res.status(404).json({
             status: "failed",
             message: error.message
+
         })
+
+
     }
 }
 
-module.exports = { createPost, myPosts, allPosts }
+
+module.exports = {
+    createPost,
+    allPosts,
+    GetMyPosts
+}
