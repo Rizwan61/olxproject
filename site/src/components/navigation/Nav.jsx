@@ -1,5 +1,5 @@
 import React from 'react'
-import accordian from '../assets/image/accordian.svg'
+import accordian from '../../assets/image/accordian.svg'
 
 function Nav() {
     const NavItems = [
