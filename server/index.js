@@ -6,6 +6,7 @@ const cors = require("cors");
 
 
 const postRouter = require("./routes/PostRoutes");
+const userRouter = require("./routes/UserRoute");
 dotenv.config();
 // middle ware
 
@@ -16,6 +17,7 @@ app.use(cors());
 // routes
 
 app.use("/post", postRouter);
+app.use("/user", userRouter)
 
 
 

@@ -9,7 +9,7 @@ const upload = multer ({storage : storage});
 
 
 // Create New Post
-router.post("/createpost", upload.single('image'), postCrtl.createPost);
+router.post("/createpost", [checkAuth, upload.single('image')], postCrtl.createPost);
 // View all post 
 router.post("/allpost", postCrtl.allPosts);
 //  Get Single Post
