@@ -1,12 +1,20 @@
 import React from 'react'
 import logo from '../assets/image/logo.png'
+import border from '../assets/image/border.svg'
+import plusicon from '../assets/image/plusicon.svg'
 
 function Navbar() {
     return (
         <>
+<<<<<<< Updated upstream
             <nav className="navbar navbar-expand-lg ">
                 <div className="container-fluid">
                     <a className="navbar-brand mx-4" href="#">
+=======
+            <nav className="navbar navbar-expand-lg bg-body-tertiary">
+                <div className="container">
+                    <a className="navbar-brand" href="#">
+>>>>>>> Stashed changes
                         <img src={logo} alt="" />
                     </a>
                     <button
@@ -74,6 +82,7 @@ function Navbar() {
 
                         </form>
                     </div>
+<<<<<<< Updated upstream
                     <div className="login">
 
                         <>
@@ -171,6 +180,13 @@ function Navbar() {
 
 
                     </div>
+=======
+                    <div><a href="">login</a></div>
+                    <div><a href="">
+                        <img src={border} alt="" sell/>
+                   
+                    </a></div>
+>>>>>>> Stashed changes
                 </div>
             </nav>
 
