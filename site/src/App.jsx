@@ -5,6 +5,7 @@ import Login from './components/login/Login'
 import Nav from './components/navigation/Nav'
 import Hero from './components/hero/Hero'
 import Catagories from './components/catagories/Catagories'
+import FeatureCard from './components/featurecard/FeatureCard'
 
 function App() {
 
@@ -30,6 +31,10 @@ function App() {
        </section>
        <section>
          <Catagories />
+
+       </section> 
+       <section>
+         <FeatureCard />
 
        </section> 
     </>
