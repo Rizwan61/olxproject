@@ -1,16 +1,14 @@
 import React from 'react'
+import tab1 from '../../assets/image/tab1.jpeg'
+import tab2 from '../../assets/image/tab2.jpeg'
+import tab3 from '../../assets/image/tab3.jpeg'
+import tab4 from '../../assets/image/tab4.jpeg'
 import { FaRegHeart } from "react-icons/fa";
-import image1 from '../../assets/image/image1.jpeg'
-import image2 from '../../assets/image/image2.jpeg'
-import image3 from '../../assets/image/image3.jpeg'
-import image4 from '../../assets/image/image4.jpeg'
-
-
-function FeatureCard() {
-    const featurecard = [
+function Tablets() {
+    const tablecard = [
         {
             id: 1,
-            path: image1,
+            path: tab1,
             price: "90",
             icon: <FaRegHeart />,
             description: "realme gt master edition",
@@ -18,7 +16,7 @@ function FeatureCard() {
         },
         {
             id: 2,
-            path: image2,
+            path: tab2,
             price: "90",
             icon: <FaRegHeart />,
             description: "realme gt master edition",
@@ -26,7 +24,7 @@ function FeatureCard() {
         },
         {
             id: 3,
-            path: image3,
+            path: tab3,
             price: "90",
             icon: <FaRegHeart />,
             description: "realme gt master edition",
@@ -34,30 +32,33 @@ function FeatureCard() {
         },
         {
             id: 4,
-            path: image4,
+            path: tab4,
             price: "90",
             icon: <FaRegHeart />,
             description: "realme gt master edition",
             address: "mall road lahore",
         }
-    
+     
+     
     ]
-    return (
-        <>
-            <div className='container'>
+    
+  return (
+    <>
+       <div className='container'>
                 <div>
-                    <h1>Mobile Phones</h1>
+                    <h1>Tablets</h1>
                 </div>
-                <div  className='d-flex gap-3' >
+                <div className='d-flex gap-3' >
                     {
-                        featurecard.map(item => {
+                        tablecard.map(item => {
                             return <div className="card" style={{ width: "22rem" }}>
                                 <img src={item.path} className="card-img-top" height={'200px'} alt="..." />
                                 <div className="card-body">
-                                    <p className="card-text">
-                                        Some quick example text to build on the card title and make up the bulk of
-                                        the card's content.
-                                    </p>
+                                    <div className='d-flex justify-content-between'><p>{item.price}</p>
+                                    <div><p>{item.icon}</p></div></div>
+                                    <div>{item.description}</div>
+                                    <p>{item.address}</p>
+                                    
                                 </div>
                             </div>
 
@@ -66,8 +67,8 @@ function FeatureCard() {
                 </div>
             </div>
 
-        </>
-    )
+    </>
+  )
 }
 
-export default FeatureCard
+export default Tablets
