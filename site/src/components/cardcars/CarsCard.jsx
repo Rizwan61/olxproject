@@ -1,13 +1,7 @@
 import React from 'react'
-import { FaRegHeart } from "react-icons/fa";
-import image1 from '../../assets/image/image1.jpeg'
-import image2 from '../../assets/image/image2.jpeg'
-import image3 from '../../assets/image/image3.jpeg'
-import image4 from '../../assets/image/image4.jpeg'
 
-
-function FeatureCard() {
-    const featurecard = [
+function CarsCard() {
+    const carscard = [
         {
             id: 1,
             path: image1,
@@ -43,11 +37,12 @@ function FeatureCard() {
      
      
     ]
-    return (
-        <>
-            <div className='container'>
+    
+  return (
+    <>
+       <div className='container'>
                 <div>
-                    <h1>Mobile Phones</h1>
+                    <h1>Cars</h1>
                 </div>
                 <div className='d-flex gap-3' >
                     {
@@ -68,8 +63,8 @@ function FeatureCard() {
                 </div>
             </div>
 
-        </>
-    )
+    </>
+  )
 }
 
-export default FeatureCard
+export default CarsCard
