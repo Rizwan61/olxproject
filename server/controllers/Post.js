@@ -19,7 +19,7 @@ const createPost = async (req, res) => {
         const photoObject = await cloudinary.v2.uploader.upload(dataURI);
 
         // create post
-        const newPost = await Post.create({ company: req.body.company, price: req.body.price, ram: req.body.ram, storage: req.body.storage, condition: req.body.condition, address: req.body.address, contact: req.body.contact, detail: req.body.detail, imageUrl: photoObject.url });
+        const newPost = await Post.create({ company: req.body.company, price: req.body.price, ram: req.body.ram, storage: req.body.storage, condition: req.body.condition, address: req.body.address, contact: req.body.contact, detail: req.body.detail,category:req.body.category,imageUrl: photoObject.url });
 
         return res.status(201).json({
             status: 'success',
@@ -68,8 +68,46 @@ const allPosts = async (req, res) => {
 }
 
 
+const postsByCategory = async (req, res) => {
+    const category = req.params.cat;
+    const limit  = req.params.limit;
+
+    // console.log(category, limit);
+    // return;
+    try {
+        let query = {};
+        let posts = [];
+        //let postLimit = 0;
+
+        if(category) {
+            query.category = category;
+        }
+
+        // if(limit){
+        //     postLimit = limit;
+        // }
+
+        posts = await Post.find(query).limit(limit);
+
+        return res.status(200).json({
+            status: "success",
+            posts: posts
+        })
+    } catch (error) {
+        return res.status(404).json({
+            status: "failed",
+            message: error.message
+
+        })
+
+
+    }
+}
+
+
 module.exports = {
     createPost,
     allPosts,
-    GetMyPosts
+    GetMyPosts,
+    postsByCategory
 }

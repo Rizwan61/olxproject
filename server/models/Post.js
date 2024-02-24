@@ -45,6 +45,11 @@ const postSchema = new mongoose.Schema({
     detail:{
         type:String,
         required:true
+    },
+    category:{
+        type:String,
+        enum:['Car','Bike','Mobile','Bike','House','Video','Tablets','Land & Plots'],  //add more options if needed
+        required:true
     }
 },{timestamps:true})
 
