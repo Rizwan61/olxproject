@@ -38,12 +38,12 @@ const login = async (req, res) => {
 
         // generate token
 
-        const token = jwt.sign({ id: userExist._id }, secretKey)
+        // const token = jwt.sign({ id: userExist._id }, secretKey)
         // return response
         res.status(201).json({
             status: "success",
             message: "Logged in successfully",
-            token: token
+            token: generateToken(userExist)
         })
 
 
@@ -119,7 +119,7 @@ const signup = async (req, res) => {
         console.log(error.message)
 
     }
-   
+
 }
 const verifyToken = (req, res) => {
     try {

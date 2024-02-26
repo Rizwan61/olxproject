@@ -19,7 +19,17 @@ const createPost = async (req, res) => {
         const photoObject = await cloudinary.v2.uploader.upload(dataURI);
 
         // create post
-        const newPost = await Post.create({ company: req.body.company, price: req.body.price, ram: req.body.ram, storage: req.body.storage, condition: req.body.condition, address: req.body.address, contact: req.body.contact, detail: req.body.detail,category:req.body.category,imageUrl: photoObject.url });
+        // const newPost = await Post.create({ company: req.body.company, price: req.body.price, ram: req.body.ram, storage: req.body.storage, condition: req.body.condition, 
+        //     address: req.body.address, contact: req.body.contact, 
+        //     detail: req.body.detail,category:req.body.category, 
+        //     imageUrl: photoObject.url });
+        const newPost =  await Post.create({
+            company: req.body.company,
+            imageUrl: photoObject.url,
+            category:req.body.category
+
+            
+        })
 
         return res.status(201).json({
             status: 'success',

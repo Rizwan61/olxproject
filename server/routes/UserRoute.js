@@ -12,7 +12,7 @@ const userR = express.Router()
 //  User API
 userR.post("/login", UserCrtl.login);
 userR.post("/signup",upload.single('image'), UserCrtl.signup);
-userR.post("/verifytoken", checkAuth, UserCrtl.verifyToken);
+// userR.post("/verifytoken", checkAuth, UserCrtl.verifyToken);
 
 
 module.exports = userR;

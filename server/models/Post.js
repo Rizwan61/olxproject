@@ -24,32 +24,32 @@ const postSchema = new mongoose.Schema({
     },
     ram:{
         type:String,
-        required:true
+        // required:true
     },
     storage:{
         type:String,
-        required:true
+        // required:true
     },
     condition:{
         type:String,
-        required:true
+        // required:true
     },
     address:{
         type:String,
-        required:true
+        // required:true
     },
     contact:{
         type:String,
-        required:true
+        // required:true
     },
     detail:{
         type:String,
-        required:true
+        // required:true
     },
     category:{
         type:String,
         enum:['Car','Bike','Mobile','Bike','House','Video','Tablets','Land & Plots'],  //add more options if needed
-        required:true
+        // required:true
     }
 },{timestamps:true})
 
