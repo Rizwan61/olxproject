@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import bike1 from '../../assets/image/bike1.jpeg'
-import bike2 from '../../assets/image/bike2.jpeg'
-import bike3 from '../../assets/image/bike3.jpeg'
-import bike4 from '../../assets/image/bike4.jpeg'
+// import bike1 from '../../assets/image/bike1.jpeg'
+// import bike2 from '../../assets/image/bike2.jpeg'
+// import bike3 from '../../assets/image/bike3.jpeg'
+// import bike4 from '../../assets/image/bike4.jpeg'
 import { FaRegHeart } from "react-icons/fa";
-import axios from "axios";
+import axios from 'axios'
 
 function BikeCard() {
     const [bikecard, setBikecard] = useState([]);
@@ -45,6 +45,7 @@ function BikeCard() {
      
     // ]
     useEffect(() => {
+        
         axios.get('http://localhost:4001/post/allpost')
             .then(res => {
                 console.log(res.data.posts);
