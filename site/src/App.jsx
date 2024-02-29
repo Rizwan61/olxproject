@@ -14,6 +14,7 @@ import PlotLand from './components/plotland/PlotLand'
 import Job from './components/job/Job'
 import Adds from './components/adds/Adds'
 import OlxApp from './components/olxapp/OlxApp'
+import Footer from './components/footer/Footer'
 
 function App() {
 
@@ -77,6 +78,10 @@ function App() {
        </section>
        <section className='my-4'>
          <OlxApp />
+       </section>
+
+       <section>
+         <Footer />
        </section>
     </>
   )

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import car1 from '../../assets/image/car1.jpeg'
-import car2 from '../../assets/image/car2.jpeg'
-import car3 from '../../assets/image/car3.jpeg'
-import car4 from '../../assets/image/car4.jpeg'
-import { FaRegHeart } from "react-icons/fa";
+// import car1 from '../../assets/image/car1.jpeg'
+// import car2 from '../../assets/image/car2.jpeg'
+// import car3 from '../../assets/image/car3.jpeg'
+// import car4 from '../../assets/image/car4.jpeg'
+// import { FaRegHeart } from "react-icons/fa";
 import axios from 'axios'
 function CarsCard() {
     const [carscard, setCarscard] = useState([])
