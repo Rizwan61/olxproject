@@ -1,14 +1,38 @@
-import React from 'react'
+import React, { useState } from 'react'
 import logo from '../../assets/image/logo.png'
 import border from '../../assets/image/border.svg'
 import plusicon from '../../assets/image/plusicon.svg'
+import Login from '../login/Login'
+import Modal from '../modal/Modal'
+import { Button } from 'antd';
 
 function Navbar() {
+    const [open, setOpen] = useState(false);
+    const [confirmLoading, setConfirmLoading] = useState(false);
+    const [modalText, setModalText] = useState('Content of the modal');
+    const showModal = () => {
+        setOpen(true);
+      };
+    
+      const handleOk = () => {
+        setModalText('The modal will be closed after two seconds');
+        setConfirmLoading(true);
+        setTimeout(() => {
+          setOpen(false);
+          setConfirmLoading(false);
+        }, 2000);
+      };
+    
+      const handleCancel = () => {
+        console.log('Clicked cancel button');
+        setOpen(false);
+      };
     return (
         <>
 
 
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
+            <Modal handleOk={handleOk} handleCancel={handleCancel} confirmLoading={confirmLoading} modalText={modalText}/>
                 <div className="container">
                     <a className="navbar-brand" href="#">
                         <img src={logo} alt="" />
@@ -78,105 +102,18 @@ function Navbar() {
 
                         </form>
                     </div>
-                    <div className="login">
-
-
+                    <>
                         {/* Button trigger modal */}
-                        <button
-                            type="button"
-                            className="btn btn-primary"
-                            data-bs-toggle="modal"
-                            data-bs-target="#exampleModal"
-                        >
-                            Login
-                        </button>
-                        {/* Modal */}
-                        <div
-                            className="modal fade"
-                            id="exampleModal"
-                            tabIndex={-1}
-                            aria-labelledby="exampleModalLabel"
-                            aria-hidden="true"
-                        >
-                            <div className="modal-dialog modal-dialog-centered">
-                                <div className="modal-content">
-
-                                    <div className="modal-header d-flex flex-column">
-                                        <button
-                                            type="button"
-                                            className="btn-close"
-                                            data-bs-dismiss="modal"
-                                            aria-label="Close"
-                                        />
-                                        <h1 className="modal-title fs-1 fw-blod" id="exampleModalLabel">
-                                            Olx
-                                        </h1>
-                                        <h2 className='fs-3 fw-500'>Welcome to OLX</h2>
-                                        <span>The trusted community of buyers and sellers.</span>
-
-                                    </div>
-                                    <div className="modal-body">
-                                        <form>
-                                            <div className="mb-3">
-                                                <label htmlFor="exampleInputEmail1" className="form-label">
-                                                    Email address
-                                                </label>
-                                                <input
-                                                    type="email"
-                                                    className="form-control"
-                                                    id="exampleInputEmail1"
-                                                    aria-describedby="emailHelp"
-                                                    placeholder='Enter Email/Username'
-                                                />
-                                                <div id="emailHelp" className="form-text">
-                                                    We'll never share your email with anyone else.
-                                                </div>
-                                            </div>
-                                            <div className="mb-3">
-                                                <label htmlFor="exampleInputPassword1" className="form-label">
-                                                    Password
-                                                </label>
-                                                <input
-                                                    type="password"
-                                                    className="form-control"
-                                                    id="exampleInputPassword1"
-                                                    placeholder='Enter Password'
-                                                />
-                                            </div>
-                                            <div className="mb-3 form-check">
-                                                <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                                                <label className="form-check-label" htmlFor="exampleCheck1">
-                                                    Check me out
-                                                </label>
-                                            </div>
-                                            <div className="modal-footer">
-                                                <button type="submit" className="btn btn-primary">
-                                                    Submit
-                                                </button>
-                                                <button
-                                                    type="button"
-                                                    className="btn btn-secondary"
-                                                    data-bs-dismiss="modal"
-                                                >
-                                                    Close
-                                                </button>
-
-                                            </div>
-
-                                        </form>
-                                        <span className='text-center d-block'>By continuing, you are accepting</span>
-
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
+                        <Button type="primary" onClick={showModal}>
+        Open Modal with async logic
+      </Button>
+                       
+                    </>
 
 
 
-                    </div>
+                </div>
 
-</div>
             </nav>
         </>
     )
