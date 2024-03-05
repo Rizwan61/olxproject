@@ -7,32 +7,16 @@ import Modal from '../modal/Modal'
 import { Button } from 'antd';
 
 function Navbar() {
-    const [open, setOpen] = useState(false);
-    const [confirmLoading, setConfirmLoading] = useState(false);
-    const [modalText, setModalText] = useState('Content of the modal');
-    const showModal = () => {
-        setOpen(true);
-      };
     
-      const handleOk = () => {
-        setModalText('The modal will be closed after two seconds');
-        setConfirmLoading(true);
-        setTimeout(() => {
-          setOpen(false);
-          setConfirmLoading(false);
-        }, 2000);
-      };
+
     
-      const handleCancel = () => {
-        console.log('Clicked cancel button');
-        setOpen(false);
-      };
+    
     return (
         <>
 
 
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
-            <Modal handleOk={handleOk} handleCancel={handleCancel} confirmLoading={confirmLoading} modalText={modalText}/>
+                
                 <div className="container">
                     <a className="navbar-brand" href="#">
                         <img src={logo} alt="" />
@@ -103,11 +87,8 @@ function Navbar() {
                         </form>
                     </div>
                     <>
-                        {/* Button trigger modal */}
-                        <Button type="primary" onClick={showModal}>
-        Open Modal with async logic
-      </Button>
-                       
+                        
+
                     </>
 
 

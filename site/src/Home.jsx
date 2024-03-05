@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from './components/submenu/Navbar'
+import Navbar from './components/topmenu/Navbar'
 import Login from './components/login/Login'
 import Nav from './components/navigation/Nav'
 import Hero from './components/hero/Hero'
@@ -20,6 +20,7 @@ function Home() {
   <>
    <section>
         <div className=' mx-auto max-w-[1340px]'>
+          
           <Navbar />
         </div>
       </section>

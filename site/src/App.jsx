@@ -12,14 +12,13 @@ function App() {
 
 
 
-
      
 
 
 
       <Routes>
       <Route path='/' element={<Home/>}/>
-       <Route path='/dashboard' element={<Dashboard/>}/>
+       {/* <Route path='/dashboard' element={<Dashboard/>}/> */}
           {/* <Route index element={<Products products={products} removeItem={removeItem} setUpdated={setUpdated} />} />
           <Route path='product/create' element={<Create setUpdated={setUpdated} />} />
           <Route path='product/edit/:pid' element={<Edit setUpdated={setUpdated} />} /> */}
