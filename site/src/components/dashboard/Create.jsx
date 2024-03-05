@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from "react-toastify";
 
 
-function Create(props) {
+function Create() {
 
   const [name, setName] = useState("");
   const [price, setPrice] = useState(0);
@@ -69,9 +69,10 @@ function Create(props) {
 
   };
 
-
+  
   return (
     <>
+    <h1> Add New Post</h1>
 
       {
         <form onSubmit={(e) => { e.preventDefault() }}>
@@ -95,7 +96,7 @@ function Create(props) {
           <div className="text-center">
             <button className="btn btn-primary" type="button" onClick={onHandle} disabled={loading == true ? true:""}>
               {loading ==true ?(<span className="spinner-grow spinner-grow-sm" aria-hidden="true"></span>):null}
-              <span role="status"> {loading == false ? "Create Product" : "Loading..."}</span>
+              <span role="status"> {loading == false ? "Add New Post" : "Loading..."}</span>
             </button>
           </div>
 

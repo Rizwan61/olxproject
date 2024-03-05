@@ -3,20 +3,37 @@ import logo from '../../assets/image/logo.png'
 import border from '../../assets/image/border.svg'
 import plusicon from '../../assets/image/plusicon.svg'
 import Login from '../login/Login'
-import Modal from '../modal/Modal'
-import { Button } from 'antd';
+import { Modal, Button } from 'antd';
+import "./topmenu.css"
+
+
+
+
 
 function Navbar() {
-    
+    const [visible, setVisible] = useState(false);
 
-    
-    
+    const showModal = () => {
+        setVisible(true);
+    };
+
+    const handleOk = () => {
+
+        setVisible(false);
+    };
+
+    const handleCancel = () => {
+
+        setVisible(false);
+    };
+
+
     return (
         <>
 
 
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
-                
+
                 <div className="container">
                     <a className="navbar-brand" href="#">
                         <img src={logo} alt="" />
@@ -86,16 +103,20 @@ function Navbar() {
 
                         </form>
                     </div>
-                    <>
-                        
+                    <Button type="primary" onClick={showModal}>
+                        Login
+                    </Button>
+                    <Modal title="" visible={visible} onOk={handleOk} onCancel={handleCancel}>
 
-                    </>
+                        <Login />
+
+                    </Modal>
 
 
 
                 </div>
 
-            </nav>
+            </nav >
         </>
     )
 }

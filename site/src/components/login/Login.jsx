@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import Link from 'antd/es/typography/Link';
 
 function Login() {
   const [email, setEmail] = useState();
@@ -57,11 +58,11 @@ const navigate=useNavigate()
                                 />
                             </div>
                             <button onClick={handleSubmit} type="submit" className="btn btn-primary w-50 d-block text-center mx-auto">
-                               Login
+                               Submit
                             </button>
                         </form>
 
-                        {/* <div className="d-flex justify-content-center mt-3">
+                        <div className="d-flex justify-content-center mt-3">
                             <hr className="w-25 me-1" /><span>Or SignUp with</span><hr className="w-25 ms-1" />
                         </div>
                         <div className="d-flex justify-content-center gap-3">
@@ -71,7 +72,7 @@ const navigate=useNavigate()
 
                         </div>
                         <span className="text-center d-block my-2">Don't have an account?<Link to='/signup'> Sign Up</Link></span>
-                        < span className="text-center d-block mt-3">by signup to <a href="#"><span className="text-danger">agree</span></a> to out <a href="#"><span className="text-danger">terms of use</span></a> and <a href="#"><span className="text-danger">privacy</span></a></span> */}
+                        < span className="text-center d-block mt-3">by signup to <a href="#"><span className="text-danger">agree</span></a> to out <a href="#"><span className="text-danger">terms of use</span></a> and <a href="#"><span className="text-danger">privacy</span></a></span>
 
 
                     </div>
