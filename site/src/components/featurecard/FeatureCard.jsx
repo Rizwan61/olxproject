@@ -10,54 +10,54 @@ import { Routes, Route, useParams } from 'react-router-dom';
 
 
 function FeatureCard() {
-    const [featurecard, setFeaturecard] = useState([]);
+    // const [featurecard, setFeaturecard] = useState([]);
     
     
     
-    // const featurecard = [
-    //     {
-    //         id: 1,
-    //         path: image1,
-    //         price: "90",
-    //         icon: <FaRegHeart />,
-    //         description: "realme gt master edition",
-    //         address: "mall road lahore",
-    //     },
-    //     {
-    //         id: 2,
-    //         path: image2,
-    //         price: "90",
-    //         icon: <FaRegHeart />,
-    //         description: "realme gt master edition",
-    //         address: "mall road lahore",
-    //     },
-    //     {
-    //         id: 3,
-    //         path: image3,
-    //         price: "90",
-    //         icon: <FaRegHeart />,
-    //         description: "realme gt master edition",
-    //         address: "mall road lahore",
-    //     },
-    //     {
-    //         id: 4,
-    //         path: image4,
-    //         price: "90",
-    //         icon: <FaRegHeart />,
-    //         description: "realme gt master edition",
-    //         address: "mall road lahore",
-    //     }
+    const featurecard = [
+        {
+            id: 1,
+            path: image1,
+            price: "Rs 35,000            ",
+            icon: <FaRegHeart />,
+            description: "McLeod Road, Lahore",
+            address: "Cantt, Sialkot",
+        },
+        {
+            id: 2,
+            path: image2,
+            price: "Rs 16,500",
+            icon: <FaRegHeart />,
+            description: "I phone 7 plus 128gb",
+            address: "Chungi Amar Sadhu, Lahore",
+        },
+        {
+            id: 3,
+            path: image3,
+            price: "Rs 160,000",
+            icon: <FaRegHeart />,
+            description: "GOOGLE PIXEL 8/8 PRO BRAND NEW",
+            address: "Saddar, Karachi",
+        },
+        {
+            id: 4,
+            path: image4,
+            price: "Rs 39,000",
+            icon: <FaRegHeart />,
+            description: "Pta Approved Iphone 8",
+            address: "Cantt, Karachi",
+        }
 
-    // ]
+    ]
 
-    useEffect(() => {
-        axios.get(`http://localhost:4001/post/postsbycat/realme`)
-            .then(res => {
-                console.log(res.data.posts);
-                setFeaturecard(res.data.posts);
-            });
+    // useEffect(() => {
+    //     axios.get(`http://localhost:4001/post/postsbycat/realme`)
+    //         .then(res => {
+    //             console.log(res.data.posts);
+    //             setFeaturecard(res.data.posts);
+    //         });
 
-    }, [])
+    // }, [])
 
 
     return (
@@ -71,15 +71,15 @@ function FeatureCard() {
                     {
                         featurecard.map(item => {
                             return <div className="card" style={{ width: "22rem" }}>
-                                <img src={item.imageUrl} className="card-img-top" height={'200px'} alt="..." />
+                                <img src={item.path} className="card-img-top" height={'200px'} alt="..." />
                                 <div className="card-body">
 
                                     <div className='d-flex justify-content-between'>
-                                        <h3>{item.price}</h3>
+                                        <p>{item.price}</p>
                                         <FaRegHeart />
                                     </div>
                                     <p className="card-text">
-                                     {item.detail}
+                                     {item.description}
                                     </p>
                                     <span>{item.address}</span>
                                 </div>

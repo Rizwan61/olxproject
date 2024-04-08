@@ -30,7 +30,7 @@ function Home() {
           <Nav />
         </div>
       </section>
-      <section className=' mx-auto max-w-[1340px] mt-4' >
+      <section className=' mx-auto max-w-[1340px] mt-4' id='hero' >
         <Hero />
       </section>
       <section>
@@ -65,9 +65,9 @@ function Home() {
         <PlotLand />
 
       </section>
-      <section className='my-4'>
+      {/* <section className='my-4'>
         <Job />
-      </section>
+      </section> */}
       <section className='my-4'>
         <Adds />
       </section>
